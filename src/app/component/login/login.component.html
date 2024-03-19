@@ -1,0 +1,57 @@
+
+<form [formGroup] ="loginForm" (ngSubmit)="handelForm()"   >
+
+ 
+  
+
+
+<div class="mb-2 ">
+<label for="email">  Email</label>
+<input   #inputEmail     type="email" formControlName="email" id="email" class="form-control ">
+
+<div class=" alert alert-danger " *ngIf="loginForm.get('email')?.errors && (loginForm.get('email')?.touched || inputEmail.value.length > 0 ) ">
+   <p *ngIf="loginForm.get('email')?.getError('required')">
+       email is required 
+    </p>
+    <p *ngIf="loginForm.get('name')?.getError('pattern')">
+       email InValid Format
+    </p>
+    
+</div>
+
+</div>
+
+
+
+
+<div class="mb-2 ">
+   <label for="password"> Password</label>
+   <input  #inputPasword type="password" formControlName="password" id="password" class="form-control">
+ 
+   <div  class=" alert alert-danger "*ngIf="loginForm.get('password')?.errors && ( loginForm.get('password')?.touched || inputPasword.value.length >0 )">
+      <p *ngIf="loginForm.get('password')?.getError('required')">Password is required</p>
+      <p *ngIf="loginForm.get('password')?.getError('pattern')">Password must start with an uppercase letter and be 6 to 10 characters long</p>
+    </div>
+
+</div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+<button  class=" btn-main ms-auto d-block"> Login </button>
+
+<!-- [disabled]="loginForm.invalid" -->
+
+<p    class=" alert alert-danger "  *ngIf="msError">
+   {{msError}}
+</p>
+
+</form>
