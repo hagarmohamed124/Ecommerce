@@ -16,7 +16,7 @@ import { DetailsComponent } from './component/details/details.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 
 const routes: Routes = [
-
+ 
     {
       path: '',
 canActivate:[authGuard],
@@ -32,18 +32,21 @@ canActivate:[authGuard],
         { path: 'brands', component: BrandsComponent },
         {path:'checkout/:id' , component:CheckoutComponent},
         {path:'categories', component:CategoriesComponent},
-        { path: 'login', component: LoginComponent },
+        // { path: 'login', component: LoginComponent }
        
       ]
     },
+
     {
-      path: '',
-      component: AuthLayoutComponent,
-      children: [
-        { path: 'login', component: LoginComponent },
-        { path: 'register', component: RegisterComponent }
-      ]
-    },
+    path: '',
+    component: AuthLayoutComponent,
+
+    children: [
+      { path: '', redirectTo:'register', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent }
+    ]
+  },
 
     {path:'**' , component:NotfoundComponent}
   ];

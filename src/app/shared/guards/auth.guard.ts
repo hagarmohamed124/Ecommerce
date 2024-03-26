@@ -1,10 +1,10 @@
 
 
 import { CanActivateFn, Router } from '@angular/router';
-import { Inject, inject } from '@angular/core';
+import { inject } from '@angular/core';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  let _Router = Inject(Router)
+  let _Router = inject(Router)
 
   if (localStorage.getItem('eToken') !== null) {
     return true;
