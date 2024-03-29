@@ -19,13 +19,13 @@ const routes: Routes = [
  
     {
       path: '',
-canActivate:[authGuard],
+// canActivate:[authGuard],
 
       component: MainLayoutComponent,
       children: [
         { path: '', redirectTo:'home', pathMatch: 'full' },
         { path: 'home', component: HomeComponent },
-        { path: 'cart', component: CartComponent },
+        { path: 'cart',  canActivate:[authGuard], component: CartComponent },
         { path: 'products', component: ProductsComponent },
         { path: 'wish-list', component: WishlistComponent },
         {path:'details/:id' , component:DetailsComponent },

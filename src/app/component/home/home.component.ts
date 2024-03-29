@@ -4,6 +4,7 @@ import { EcomdatapService } from 'src/app/shared/services/ecomdatap.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class HomeComponent implements OnInit {
-constructor(private _EcomdatapService:EcomdatapService , private _CartService:CartService , private _ToastrService:ToastrService){}
+constructor(private _EcomdatapService:EcomdatapService , private _CartService:CartService , private _ToastrService:ToastrService , private _Router:Router){}
 
 
 products:products[] = [];
@@ -30,7 +31,13 @@ this._CartService.addcart(id).subscribe(
     },
     error:(err)=>{
       console.log(err);
+
+    
+      const toastr = this._ToastrService.warning("Sign In/Register!" );
+      toastr.onTap.subscribe(() => {
       
+      this._Router.navigate(['/login']);
+      });
     }
 
   }
