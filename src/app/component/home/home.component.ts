@@ -33,11 +33,11 @@ this._CartService.addcart(id).subscribe(
       console.log(err);
 
     
-      const toastr = this._ToastrService.warning("Sign In/Register!" );
-      toastr.onTap.subscribe(() => {
+      // const toastr = this._ToastrService.warning("Sign In/Register!" );
+      // toastr.onTap.subscribe(() => {
       
-      this._Router.navigate(['/login']);
-      });
+      // this._Router.navigate(['/login']);
+      // });
     }
 
   }
