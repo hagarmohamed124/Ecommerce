@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "homepage": "http://hagarmohamed124.github.io/ecommerce",
+  
     "@angular/animations": "^17.3.2",
     "@angular/common": "^17.3.2 ",
     "@angular/compiler": "^17.3.2 ",
@@ -26,14 +26,14 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "bootstrap": "^5.3.3",
     "jwt-decode": "^4.0.0",
-    "ngx-owl-carousel-o": "^5.1.2",
+    "ngx-owl-carousel-o": "^17.0.0",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.4"
   },
   "devDependencies": {
-    "homepage": "http://hagarmohamed124.github.io/ecommerce",
+  
     "@angular-devkit/build-angular": "^17.3.2",
     "@angular/cli": "^17.3.2",
     "@angular/compiler-cli": "^17.3.2 ",
