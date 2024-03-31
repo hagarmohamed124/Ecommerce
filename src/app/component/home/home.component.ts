@@ -29,16 +29,20 @@ this._CartService.addcart(id).subscribe(
       this._ToastrService.success("It has been successfully added. 🛺")
       
     },
+
+
+
     error:(err)=>{
       console.log(err);
 
     
-      // const toastr = this._ToastrService.warning("Sign In/Register!" );
-      // toastr.onTap.subscribe(() => {
+      const toastr = this._ToastrService.warning("Sign In/Register!" );
+      toastr.onTap.subscribe(() => {
       
-      // this._Router.navigate(['/login']);
-      // });
+      this._Router.navigate(['/login']);
+      });
     }
+
 
   }
 )
